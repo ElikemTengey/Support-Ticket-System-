@@ -1,0 +1,42 @@
+/* Gradient button */
+.login-btn {
+  background: linear-gradient(to right, #a100ff, #00d4ff);
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Input fields */
+.form-control {
+  border-radius: 25px;
+  border: 1px solid #e0e0e0;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+}
+
+.form-control:focus {
+  border-color: #a100ff;
+  box-shadow: 0 0 0 0.2rem rgba(161, 0, 255, 0.15);
+}
+
+/* Card container */
+.card {
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+/* Icon styles */
+.position-relative i {
+  font-size: 1rem;
+}
+
+/* Page background */
+.bg-light {
+  background: linear-gradient(120deg, #ffffff, #f3f3f3);
+}

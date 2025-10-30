@@ -1,0 +1,41 @@
+.ticket-form {
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+/* Gradient button */
+.submit-btn {
+  background: linear-gradient(to right, #a100ff, #00d4ff);
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Inputs */
+.form-control,
+.form-select {
+  border-radius: 25px;
+  border: 1px solid #e0e0e0;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #a100ff;
+  box-shadow: 0 0 0 0.2rem rgba(161, 0, 255, 0.15);
+}
+
+/* Title text */
+h4 {
+  color: #a100ff;
+  background: linear-gradient(to right, #a100ff, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

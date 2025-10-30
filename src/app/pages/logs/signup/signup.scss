@@ -1,0 +1,42 @@
+/* Gradient submit button */
+.signup-btn {
+  background: linear-gradient(to right, #00d4ff, #a100ff);
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.signup-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Inputs */
+.form-control {
+  border-radius: 25px;
+  border: 1px solid #e0e0e0;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+}
+
+.form-control:focus {
+  border-color: #00d4ff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 212, 255, 0.15);
+}
+
+/* Card container */
+.card {
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+/* Icon styling */
+.position-relative i {
+  font-size: 1rem;
+}
+
+/* Background gradient */
+.bg-light {
+  background: linear-gradient(120deg, #ffffff, #f3f3f3);
+}

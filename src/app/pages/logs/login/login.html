@@ -1,0 +1,47 @@
+<div class="d-flex justify-content-center align-items-center min-vh-100 bg-light">
+  <div class="card shadow-lg p-4 border-0" style="max-width: 380px; width: 100%; border-radius: 20px;">
+    <h3 class="text-center mb-4 fw-bold">Login</h3>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <!-- Username -->
+      <div class="mb-3 position-relative">
+        <i class="bi bi-person position-absolute top-50 translate-middle-y ms-3 text-secondary"></i>
+        <input
+          type="text"
+          formControlName="username"
+          class="form-control ps-5 py-2"
+          placeholder="Type your username"
+        />
+      </div>
+
+      <!-- Password -->
+      <div class="mb-4 position-relative">
+        <i class="bi bi-lock position-absolute top-50 translate-middle-y ms-3 text-secondary"></i>
+        <input
+          type="password"
+          formControlName="password"
+          class="form-control ps-5 py-2"
+          placeholder="Type your password"
+        />
+      </div>
+
+      <!-- Login button -->
+      <button
+        type="submit"
+        class="btn w-100 text-white fw-semibold login-btn"
+      >
+        LOGIN
+      </button>
+    </form>
+
+    <!-- Signup link -->
+    <p class="mt-4 text-center small">
+      No account?
+      <a routerLink="/signup" class="text-decoration-none fw-semibold text-primary">Sign up</a>
+    </p>
+
+    @if (error) {
+      <p class="text-danger mt-2 text-center">{{ error }}</p>
+    }
+  </div>
+</div>
