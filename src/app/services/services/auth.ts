@@ -10,12 +10,26 @@ export class AuthService {
   private baseUrl = 'http://localhost:3000/users';
   currentUser = signal<any>(null);
 
+   private loadUserFromStorage() {
+    const stored = localStorage.getItem('currentUser');
+    return stored ? JSON.parse(stored) : null;
+  }
+
+  private saveUserToStorage(user: any) {
+    localStorage.setItem('currentUser', JSON.stringify(user));
+  }
+
+  private clearUserFromStorage() {
+    localStorage.removeItem('currentUser');
+  }
+
   login(username: string, password: string): Observable<any> {
     return this.http.get<any[]>(`${this.baseUrl}?username=${username}&password=${password}`)
       .pipe(
         map(users => users.length ? users[0] : null),
         tap(user => {
           if (user) this.currentUser.set(user);
+          this.saveUserToStorage(user)
         })
       );
   }
@@ -23,12 +37,16 @@ export class AuthService {
   signup(username: string, password: string): Observable<any> {
     const payload = { username, password, role: 'user' };
     return this.http.post(this.baseUrl, payload).pipe(
-      tap((user: any) => this.currentUser.set(user))
-    );
-  }
+      tap((user: any) => {
+        this.currentUser.set(user);
+        this.saveUserToStorage(user);
+      })
+  )};
 
   logout() {
     this.currentUser.set(null);
+    this.clearUserFromStorage();
+    
   }
 
   isAdmin(): boolean {

@@ -14,16 +14,7 @@
           <div class="card ticket-card mb-3 p-3 shadow-sm">
             <app-ticket-card [ticket]="t"></app-ticket-card>
 
-            @if (t.status !== 'resolved') {
-              <div class="text-end mt-2">
-                <button
-                  class="btn btn-outline-danger btn-sm rounded-pill fw-semibold"
-                  (click)="closeTicket(t)"
-                >
-                  Close
-                </button>
-              </div>
-            }
+            
           </div>
         }
       } @else {

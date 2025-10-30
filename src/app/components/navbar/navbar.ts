@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { authGuard } from '../../guards/auth-guard';
+import { AuthService } from '../../services/services/auth';
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +10,7 @@ import { authGuard } from '../../guards/auth-guard';
   styleUrl: './navbar.scss',   
 })
 export class Navbar {
-  private auth = inject(authGuard);
+  private auth = inject(AuthService);  
   private router = inject(Router);
 
   get loggedIn() {

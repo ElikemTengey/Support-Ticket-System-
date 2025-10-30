@@ -1,15 +1,15 @@
 import {inject, Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
-import {authGuard} from '../../guards/auth-guard';
+import {AuthService } from './auth';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TicketService {
   private http=inject(HttpClient);
+  private auth = inject(AuthService);
   private baseUrl = 'http://localhost:3000/tickets';
-  private auth= inject(authGuard);
 
   getTickets(): Observable<any[]> {
     return this.http.get<any[]>(this.baseUrl);

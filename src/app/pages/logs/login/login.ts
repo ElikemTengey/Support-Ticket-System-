@@ -34,14 +34,11 @@ export class Login {
     }
 
     this.auth.login(username, password).subscribe({
-      // --- 'next' callback ---
-      next: (users: any[]) => {
-        if (users.length === 0) {
+      next: (user: any) => {
+        if (!user) {
           this.error = 'Invalid credentials';
           return;
         }
-
-        const user = users[0];
 
         if (user.role === 'admin') {
           this.router.navigateByUrl('/admin/dashboard');
@@ -49,9 +46,8 @@ export class Login {
           this.router.navigateByUrl('/user/dashboard');
         }
       },
-
-      // --- 'error' callback ---
-      error: () => this.error = 'Login failed'
+      error: () => this.error = 'Login failed. Try again.'
     });
-  }
+  
+};
 }

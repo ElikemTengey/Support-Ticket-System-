@@ -27,7 +27,7 @@ export class SubmitTicket {
     if (!user) { this.message = 'You must be logged in'; return; }
     const payload = {
       ...this.form.value,
-      status: 'open',
+      status: 'pending',
       userId: user.id,
       createdAt: new Date().toISOString(),
       responses: []

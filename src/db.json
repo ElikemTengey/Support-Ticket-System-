@@ -12,15 +12,45 @@
       "password": "user123",
       "role": "user"
     }
-],
+  ],
   "tickets": [
     {
       "id": "1",
       "title": "Login not working",
       "description": "Unable to log into account",
       "priority": "high",
-      "status": "pending",
+      "status": "resolved",
       "userId": 2
+    },
+    {
+      "id": "6402",
+      "title": "network down",
+      "priority": "medium",
+      "description": "very serious",
+      "status": "open",
+      "userId": "2",
+      "createdAt": "2025-10-30T12:55:12.726Z",
+      "responses": []
+    },
+    {
+      "id": "304d",
+      "title": "load error ",
+      "priority": "low",
+      "description": "unable to load",
+      "status": "pending",
+      "userId": "2",
+      "createdAt": "2025-10-30T13:01:44.576Z",
+      "responses": []
+    },
+    {
+      "id": "88c3",
+      "title": "scdsfv",
+      "priority": "high",
+      "description": "dvs",
+      "status": "pending",
+      "userId": "2",
+      "createdAt": "2025-10-30T13:04:39.318Z",
+      "responses": []
     }
-]
+  ]
 }

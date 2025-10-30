@@ -1,37 +1,16 @@
-/* Heading */
 h2 {
-  color: #a100ff;
-  background: linear-gradient(to right, #a100ff, #00d4ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #222;
 }
 
-/* Ticket card styling */
-.ticket-card {
-  border: 1px solid #f0f0f0;
-  border-radius: 16px;
-  transition: all 0.3s ease;
-  background-color: #fff;
+.card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
 }
 
-.ticket-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(161, 0, 255, 0.1);
-}
-
-/* Close button hover */
-.btn-outline-danger {
-  border-color: #ff6b6b;
-  color: #ff6b6b;
-  transition: 0.3s;
-}
-
-.btn-outline-danger:hover {
-  background-color: #ff6b6b;
-  color: #fff;
-}
-
-/* Responsive spacing */
-.container {
-  max-width: 1100px;
+select.form-select {
+  border-radius: 0.5rem;
 }

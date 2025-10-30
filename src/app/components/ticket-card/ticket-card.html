@@ -13,7 +13,6 @@
 
       <!-- Priority & Status -->
       <div class="text-end">
-        <!-- Priority badge with inline color -->
         @if (ticket().priority === 'low') {
           <span class="badge bg-success px-3 py-2 text-uppercase fw-medium">Low</span>
         } @else if (ticket().priority === 'medium') {
@@ -22,7 +21,6 @@
           <span class="badge bg-danger px-3 py-2 text-uppercase fw-medium">High</span>
         }
 
-        <!-- Status text -->
         <div class="small mt-2">
           Status:
           @if (ticket().status === 'resolved') {
@@ -36,7 +34,7 @@
       </div>
     </div>
 
-    <!-- Buttons passed from parent -->
+    <!-- Action from parent -->
     <div class="mt-3 d-flex gap-2">
       <ng-content></ng-content>
     </div>

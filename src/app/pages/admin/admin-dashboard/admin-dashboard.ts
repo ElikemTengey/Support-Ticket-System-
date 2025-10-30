@@ -1,10 +1,11 @@
 import { Component, computed, effect, inject, signal } from '@angular/core';
 import { TicketService } from '../../../services/services/ticket';
 import { TicketCard } from '../../../components/ticket-card/ticket-card';
+import { Chart } from '../../../chart/chart/chart';
 
 @Component({
   selector: 'app-admin-dashboard',
-  imports: [TicketCard],
+  imports: [TicketCard,Chart],
   templateUrl: './admin-dashboard.html',
   styleUrl: './admin-dashboard.scss',
 })
