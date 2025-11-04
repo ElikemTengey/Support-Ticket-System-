@@ -1,4 +1,4 @@
-<div class="container py-5">
+<div class="container-fluid bgc mt-5 py-5">
   <!-- Title -->
   <h2 class="mb-4 fw-bold text-dark">Admin Dashboard</h2>
 
@@ -31,8 +31,36 @@
       </div>
     </div>
   </div>
-  <div class="space-y-3"> @for (t of tickets(); track t.id) { <app-ticket-card [ticket]="t"> <select class="form-select form-select-sm w-auto" (change)="changeStatus(t, $any($event.target).value)"> <option value="open" [selected]="t.status === 'open'">Open</option> <option value="pending" [selected]="t.status === 'pending'">Pending</option> <option value="resolved" [selected]="t.status === 'resolved'">Resolved</option> </select> </app-ticket-card> } @empty { <p class="text-muted mt-3">No tickets found.</p> } </div>
-
+  
   <!-- ====== Chart & Tickets row ====== -->
  <app-chart/>
+
+<div class="row g-3 mt-4">
+  @for (t of tickets(); track t.id) {
+    
+    <div class="col-12 col-md-6 col-lg-4">
+      <app-ticket-card [ticket]="t">
+        <select
+          class="form-select form-select-sm w-auto"
+          (change)="changeStatus(t, $any($event.target).value)"
+        >
+          <option value="open" [selected]="t.status === 'open'">Open
+          <option value="pending" [selected]="t.status === 'pending'">
+            Pending
+          </option>
+          <option value="resolved" [selected]="t.status === 'resolved'">
+            Resolved
+          </option>
+        </select>
+      </app-ticket-card>
+    </div>
+  } @empty {
+     
+      
+    <div class="col-12">
+      <p class="text-muted mt-3">No tickets found.</p>
+    </div>
+  }
+</div>
+  
 </div>

@@ -1,4 +1,4 @@
-<div class="container py-5">
+<div class="container-fluid bg mt-5 bgc py-5">
   <h2 class="fw-bold mb-4 pt-5 text-primary">My Tickets</h2>
 
   <div class="row g-4">
@@ -8,14 +8,14 @@
     </div>
 
     <!-- Right column: Ticket list -->
-    <div class="col-12 col-md-7">
+    <div class="col-12 col-md-7 ">
       @if (tickets.length > 0) {
         @for (t of tickets; track t.id) {
-          <div class="card ticket-card mb-3 p-3 shadow-sm">
+          
             <app-ticket-card [ticket]="t"></app-ticket-card>
 
             
-          </div>
+          
         }
       } @else {
         <p class="text-muted mt-3">You have no tickets.</p>

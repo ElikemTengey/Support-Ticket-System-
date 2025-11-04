@@ -1,7 +1,18 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-lg   px-4 py-3 rounded-bottom">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white shadow-lg   px-4 py-3 rounded-bottom">
   <div class="container-fluid">
-    <a class="navbar-brand fw-bold fs-5 text-primary" routerLink="/">SupportTicketSystem</a>
-
+    @if (loggedIn && isAdmin) {
+      <a class="navbar-brand fw-bold fs-5 text-primary" routerLink="/admin/dashboard">
+        Support Ticket System
+      </a>
+    } @else if (loggedIn && !isAdmin) {
+      <a class="navbar-brand fw-bold fs-5 text-primary" routerLink="/user/dashboard">
+        Support Ticket System
+      </a>
+    } @else {
+      <a class="navbar-brand fw-bold fs-5 text-primary" routerLink="/">
+        Support Ticket System
+      </a>
+    }
     <button
       class="navbar-toggler"
       type="button"
@@ -14,10 +25,19 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
       <ul class="navbar-nav align-items-center gap-3">
 
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/">Home</a>
-        </li>
-
+         @if (loggedIn && isAdmin) {
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/dashboard">Home</a>
+          </li>
+        } @else if (loggedIn && !isAdmin) {
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/user/dashboard">Home</a>
+          </li>
+        } @else {
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/">Home</a>
+          </li>
+        }
         @if (loggedIn) {
 
           @if (isAdmin) {
