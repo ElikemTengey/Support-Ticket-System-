@@ -1,11 +1,15 @@
 .card {
-  border-radius: 16px;
-  transition: all 0.3s ease;
+border: 1px solid #e9dfff;
 }
 
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(161, 0, 255, 0.1);
+//.card:hover {
+//  transform: translateY(-3px);
+//  box-shadow: 0 4px 10px rgba(161, 0, 255, 0.1);
+//}
+.bgclr{
+  background-color: #f8f5ff; // Very light purple bg
+  
+
 }
 
 h5 {
@@ -20,10 +24,6 @@ h5 {
   transition: all 0.3s ease;
 }
 
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(161, 0, 255, 0.1);
-}
 
 h5 {
   color: #222;

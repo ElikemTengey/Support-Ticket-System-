@@ -1,8 +1,9 @@
-<div class="card shadow-sm p-4 border-0 ticket-form">
-  <h4 class="fw-semibold mb-3 text-primary">Submit a Ticket</h4>
+<div class="container-fluid bgc">
+<div class="card shadow-sm   p-4  border-1 ticket-form mx-auto" style="max-width: 550px; margin-top: 6rem !important;">
+  
+  <h4 class="fw-semibold mb-3 pb-4 text-primary text-center">Submit a Ticket</h4>
 
   <form [formGroup]="form" (ngSubmit)="submit()">
-    <!-- Title -->
     <div class="mb-3">
       <input
         type="text"
@@ -12,7 +13,6 @@
       />
     </div>
 
-    <!-- Priority -->
     <div class="mb-3">
       <select formControlName="priority" class="form-select form-select-lg">
         <option value="" disabled selected>Select priority</option>
@@ -22,7 +22,6 @@
       </select>
     </div>
 
-    <!-- Description -->
     <div class="mb-3">
       <textarea
         formControlName="description"
@@ -32,7 +31,6 @@
       ></textarea>
     </div>
 
-    <!-- Submit button -->
     <button type="submit" class="btn w-100 text-white fw-semibold submit-btn">
       Submit Ticket
     </button>
@@ -41,4 +39,5 @@
   @if (message) {
     <p class="text-success mt-3 text-center fw-medium">{{ message }}</p>
   }
+</div>
 </div>

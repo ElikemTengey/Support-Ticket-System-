@@ -1,10 +1,16 @@
 h2 {
   color: #222;
 }
-.bgc{
-  background: linear-gradient(to right, #e9e7eab7, #b1babb);
-  //background-color: #6b4444;
+.dashboard-bg {
+  // Use a standard, light gray for dashboard backgrounds
+  background-color: #f8f9fa00; 
+
+  min-height: 100vh; 
 }
+.bgc{
+    background-color: #f8f5ff; // Very light purple bg  //background-color: #6b4444;
+}
+
 .card {
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 
@@ -20,3 +26,44 @@ h2 {
   align-items: center;
   justify-content: center;
 }
+.stats{
+  background: linear-gradient(to right, #a100ff, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+/* Add this to admindashboard.scss */
+
+.list-group-item-action {
+  @media (max-width: 767.98px) {
+    &:not(:last-child) {
+      border-bottom-width: 1px;
+      border-bottom-color: var(--bs-list-group-border-color);
+    }
+    
+    & > div {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+/* --- Stat Card Styles --- */
+
+.stat-card {
+  h3 {
+    font-size: 2.2rem; 
+  }
+
+  
+  &.stat-card-total {
+    background-color: #f8f5ff; // Very light purple bg
+    border: 1px solid #e9dfff;
+
+    h6 {
+      color: #6941c6; // Dark purple text
+    }
+    h3 {
+      color: #53389e; // Main purple color
+    }
+  }
+}
+  

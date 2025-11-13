@@ -15,6 +15,7 @@ export type ChartOptions = {
   labels: string[];
   title: ApexTitleSubtitle;
   responsive: ApexResponsive[];
+  colors?: string[]; 
 };
 
 @Component({
@@ -41,7 +42,9 @@ export class Chart implements OnInit, OnDestroy {
         width: 380,
         animations: { enabled: true, dynamicAnimation: { speed: 500 } }
       },
-      labels: ['Closed', 'Pending', 'Resolved'],
+      labels: ['Open', 'Pending', 'Resolved'],
+      colors: ['#DC3545', '#FFC107', '#198754'], // 🔴🟡🟢 red, yellow, green
+
       responsive: [
         {
           breakpoint: 480,
@@ -52,7 +55,9 @@ export class Chart implements OnInit, OnDestroy {
         }
       ],
       title: {
-        text: 'Ticket Status Distribution'
+        text: '',
+        align: 'center',
+        style: { fontSize: '20px', fontWeight: 'bold' }   
       }
     };
 
@@ -68,14 +73,14 @@ export class Chart implements OnInit, OnDestroy {
   loadTicketData() {
     this.http.get<any[]>(this.baseUrl).subscribe({
       next: (tickets) => {
-        const closed = tickets.filter(t => t.status === 'closed').length;
+        const open = tickets.filter(t => t.status === 'open').length;
         const pending = tickets.filter(t => t.status === 'pending').length;
         const resolved = tickets.filter(t => t.status === 'resolved').length;
 
         // Update chart dynamically
         this.chartOptions = {
           ...this.chartOptions,
-          series: [closed, pending, resolved]
+          series: [open, pending, resolved]
         };
       },
       error: (err) => console.error('Error loading ticket data:', err)

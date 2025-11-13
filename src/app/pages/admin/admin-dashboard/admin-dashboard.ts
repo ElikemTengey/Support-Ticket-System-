@@ -1,11 +1,12 @@
-import { Component, computed, effect, inject, signal } from '@angular/core';
+import { Component, computed, effect, inject, signal,  } from '@angular/core';
 import { TicketService } from '../../../services/services/ticket';
 import { TicketCard } from '../../../components/ticket-card/ticket-card';
+import { CommonModule, SlicePipe } from '@angular/common';
 import { Chart } from '../../../chart/chart/chart';
 
 @Component({
   selector: 'app-admin-dashboard',
-  imports: [TicketCard,Chart],
+  imports: [TicketCard,Chart,SlicePipe],
   templateUrl: './admin-dashboard.html',
   styleUrl: './admin-dashboard.scss',
 })
@@ -17,7 +18,8 @@ export class AdminDashboard {
   total = computed(() => this.tickets().length);
   open = computed(() => this.tickets().filter(t => t.status === 'open').length);
   resolved = computed(() => this.tickets().filter(t => t.status === 'resolved').length);
-
+  pending = computed(() => this.tickets().filter(t => t.status === 'pending').length);
+  
   constructor() {
 
     effect(() => {

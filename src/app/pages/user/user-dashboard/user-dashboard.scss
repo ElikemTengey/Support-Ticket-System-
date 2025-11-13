@@ -4,8 +4,7 @@ h2 {
 //     background: linear-gradient(to right, #a100ff, #00d4ff);}
 
 .bgc{
-  background-color: #e9e3e3;
-}
+  background: linear-gradient(to right, #a100ff, #00d4ff);}
 .card {
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 
@@ -14,7 +13,22 @@ h2 {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   }
 }
+.bgcl{
+  background: #f8f5ff;
+}
+
 
 select.form-select {
   border-radius: 0.5rem;
+}
+.btn-clr {
+  border-radius: 20px;
+  border: 1px solid #a100ff;
+  color: #a100ff;
+  transition: 0.3s;
+}
+.btn-clr:hover {
+  background: linear-gradient(to right, #a100ff, #00d4ff);
+  color: #fff;
+  transform: translateY(-1px);
 }

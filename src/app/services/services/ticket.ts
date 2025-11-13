@@ -12,11 +12,11 @@ export class TicketService {
   private baseUrl = 'http://localhost:3000/tickets';
 
   getTickets(): Observable<any[]> {
-    return this.http.get<any[]>(this.baseUrl);
+    return this.http.get<any[]>(`${this.baseUrl}?_expand=user`);
   }
 
   getUserTickets(userId: number): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}?userId=${userId}`);
+    return this.http.get<any[]>(`${this.baseUrl}?userId=${userId}&_expand=user`);
   }
 
   createTicket(data: any) {

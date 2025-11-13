@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject,output} from '@angular/core';
 import { TicketService } from '../../../services/services/ticket';
 import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import { AuthService } from '../../../services/services/auth';
@@ -15,11 +15,15 @@ import { AuthService } from '../../../services/services/auth';
 export class SubmitTicket {
   ticketService = inject(TicketService);
   auth = inject(AuthService);
+
+  ticketSubmitted = output<any>();
+
   form = new FormGroup({
     title: new FormControl(''),
     priority: new FormControl('medium'),
     description: new FormControl('')
   });
+
   message = '';
 
   submit() {
@@ -32,10 +36,17 @@ export class SubmitTicket {
       createdAt: new Date().toISOString(),
       responses: []
     };
-    this.ticketService.createTicket(payload).subscribe(() => {
+    this.ticketService.createTicket(payload).subscribe(
+      (newTicket) => {
       this.message = 'Ticket submitted';
       this.form.reset({ priority: 'medium' });
-    });
+
+      this.ticketSubmitted.emit(newTicket);
+    },
+    (error) => {
+      this.message = 'Error submitting ticket';
+    }
+    );
   }
 
 }

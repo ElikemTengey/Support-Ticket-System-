@@ -10,6 +10,10 @@ export class AuthService {
   private baseUrl = 'http://localhost:3000/users';
   currentUser = signal<any>(null);
 
+  constructor() {
+    const user = this.loadUserFromStorage();
+    this.currentUser.set(user);
+  }
    private loadUserFromStorage() {
     const stored = localStorage.getItem('currentUser');
     return stored ? JSON.parse(stored) : null;

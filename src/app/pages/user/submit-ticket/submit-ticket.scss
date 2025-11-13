@@ -3,7 +3,6 @@
   background-color: #fff;
 }
 
-/* Gradient button */
 .submit-btn {
   background: linear-gradient(to right, #a100ff, #00d4ff);
   border: none;
@@ -12,6 +11,18 @@
   transition: 0.3s;
 }
 
+.bgc {
+  background: linear-gradient(to right, #a100ff, #00d4ff);
+  
+  min-height: 100vh; 
+  
+  padding-top: 1px; 
+  padding-bottom: 3rem;
+}
+
+.card.ticket-form {
+  background-color: #fff;
+}
 .submit-btn:hover {
   opacity: 0.9;
   transform: translateY(-1px);

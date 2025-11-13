@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-center align-items-center min-vh-100 bg-light">
   <div class="card shadow-lg p-4 border-0" style="max-width: 380px; width: 100%; border-radius: 20px;">
-    <h3 class="text-center mb-4 fw-bold">Create Account</h3>
+    <h3 class="text-center mb-4  mt-2 fw-bold">Create Account</h3>
 
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <!-- Username -->
@@ -9,7 +9,7 @@
         <input
           type="text"
           formControlName="username"
-          class="form-control ps-5 py-2"
+          class="form-control ps-2 py-2"
           placeholder="Username"
         />
       </div>
@@ -20,7 +20,7 @@
         <input
           type="password"
           formControlName="password"
-          class="form-control ps-5 py-2"
+          class="form-control ps-2 py-2"
           placeholder="Password"
         />
       </div>
@@ -31,7 +31,7 @@
         <input
           type="password"
           formControlName="confirm"
-          class="form-control ps-5 py-2"
+          class="form-control ps-2 py-2"
           placeholder="Confirm password"
         />
       </div>

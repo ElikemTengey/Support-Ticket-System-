@@ -1,12 +1,15 @@
 .navbar {
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
+  background-color: rgb(255, 255, 255);
 }
 
 /* Navbar links */
 .nav-link {
   font-weight: 700;
-  color: #555 !important;
+  background: linear-gradient(to right, #a100ff, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   transition: color 0.3s;
 }
 

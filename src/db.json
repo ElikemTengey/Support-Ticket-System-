@@ -25,7 +25,7 @@
       "title": "Login not working",
       "description": "Unable to log into account",
       "priority": "high",
-      "status": "resolved",
+      "status": "open",
       "userId": 2
     },
     {
@@ -33,20 +33,99 @@
       "title": "network down",
       "priority": "medium",
       "description": "very serious",
-      "status": "resolved",
+      "status": "open",
       "userId": "2",
       "createdAt": "2025-10-30T12:55:12.726Z",
       "responses": []
     },
-   
     {
       "id": "d6a1",
       "title": "No storage",
       "priority": "high",
       "description": "the ",
-      "status": "pending",
+      "status": "resolved",
       "userId": "2",
       "createdAt": "2025-11-03T00:27:57.147Z",
+      "responses": []
+    },
+    {
+      "id": "d017",
+      "title": "Bad weather ",
+      "priority": "low",
+      "description": "cloudy outside \n",
+      "status": "pending",
+      "userId": "219e",
+      "createdAt": "2025-11-05T10:39:13.450Z",
+      "responses": []
+    },
+    {
+      "id": "b585",
+      "title": "poor road",
+      "priority": "medium",
+      "description": "many pot holes",
+      "status": "open",
+      "userId": "2",
+      "createdAt": "2025-11-06T13:32:21.716Z",
+      "responses": []
+    },
+    {
+      "id": "4b98",
+      "title": "Data",
+      "priority": "high",
+      "description": "baddd",
+      "status": "resolved",
+      "userId": "219e",
+      "createdAt": "2025-11-06T13:34:25.745Z",
+      "responses": []
+    },
+    {
+      "id": "30a1",
+      "title": "Light",
+      "priority": "medium",
+      "description": "llll",
+      "status": "resolved",
+      "userId": "219e",
+      "createdAt": "2025-11-06T13:34:49.701Z",
+      "responses": []
+    },
+    {
+      "id": "8db4",
+      "title": "Office space",
+      "priority": "medium",
+      "description": "Too small\n",
+      "status": "pending",
+      "userId": "219e",
+      "createdAt": "2025-11-11T17:24:07.858Z",
+      "responses": []
+    },
+    {
+      "id": "a893",
+      "title": "apartment",
+      "priority": "high",
+      "description": "Not complete",
+      "status": "pending",
+      "userId": "219e",
+      "createdAt": "2025-11-11T17:53:45.754Z",
+      "responses": []
+    },
+    {
+      "id": "b7a2",
+      "title": "Battery low ",
+      "priority": "high",
+      "description": "Charger needed",
+      "status": "pending",
+      "userId": "219e",
+      "createdAt": "2025-11-12T13:57:13.587Z",
+      "responses": []
+    },
+    {
+      "id": "e80b",
+      "title": "High Way",
+      "priority": "low",
+      "description": "Speeding cars",
+      "status": "pending",
+      "userId": "2",
+      "createdAt": "2025-11-13T00:21:05.555Z",
       "responses": []
     }
   ]

@@ -1,25 +1,31 @@
-<div class="container-fluid bg mt-5 bgc py-5">
-  <h2 class="fw-bold mb-4 pt-5 text-primary">My Tickets</h2>
+<div class="container-fluid  mt-5 bg-white pt-5">
 
-  <div class="row g-4">
-    <!-- Left column: Ticket submission -->
-    <div class="col-12 col-md-5">
-      <app-submit-ticket></app-submit-ticket>
-    </div>
+  <div class="d-flex justify-content-between  align-items-center   p-4  mb-1">
+    
+    <h2 class="fw-bold text-dark mb-0">My Tickets</h2>
 
-    <!-- Right column: Ticket list -->
-    <div class="col-12 col-md-7 ">
-      @if (tickets.length > 0) {
-        @for (t of tickets; track t.id) {
-          
-            <app-ticket-card [ticket]="t"></app-ticket-card>
+    <button
+      class="btn btn-outline-primary btn-clr fw-semibold px-3"
+      (click)="createTicket()"
+    >
+      Create New Ticket
+    </button>
 
-            
-          
-        }
-      } @else {
-        <p class="text-muted mt-3">You have no tickets.</p>
+  </div>
+
+  <div class="row g-4 mt-1">
+    @if (tickets.length > 0) {
+      @for (t of tickets; track t.id) {
+        
+        <div class="col-12 col-lg-4">
+          <app-ticket-card [ticket]="t"></app-ticket-card>
+        </div>
+        
       }
-    </div>
+    } @else {
+      <div class="col-12">
+        <p class="text-muted mt-3">You have no tickets.</p>
+      </div>
+    }
   </div>
 </div>
